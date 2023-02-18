@@ -5,23 +5,56 @@
 	<title> Piedra Papel o Tijera </title>
 	<script>
 	    let seleccion=0
-        let pc=0
+        let pc=Math.floor(Math.random()*3+1)
+        let valido=0 //variable para saber si el juego es valido
         //Las condiciones son 1 selección para piedra 2 selección para papel 3 selección para tijera
 	    seleccion=prompt("Elige 1(Piedra) 2(Papel) 3(Tijera)")
         
         if(seleccion==1){
-        alert("Elegiste la poderosa Piedra")
+        alert("Elegiste la poderosa Piedra 🪨")
         }
         else if(seleccion==2){
-        alert("Elegiste el suave Papel")
+        alert("Elegiste el suave Papel 🧻")
         }
         else if(seleccion==3){
-        alert("Elegiste la filosa Tijera")
+        alert("Elegiste la filosa Tijera ✂️")
         }
         else{
         alert("No elegiste una opcion válida, PERDISTE")
+        valido=1 
         }
-        
+
+        if(valido==0)
+        {
+            if(pc==1){
+            alert("PC 🪨")
+            }
+            else if(pc==2){
+            alert("PC 🧻")
+            }
+            else if(pc==3){
+            alert("PC ✂️")
+            }
+            else{
+            alert("PC no eligió")
+            }
+
+            if(pc==seleccion){
+            alert("EMPATARON")
+            }
+            else if(pc==1 && seleccion==2){
+            alert("GANASTE! 🧻 gana a 🪨")
+            }
+            else if(pc==2 && seleccion==3){
+            alert("GANASTE! ✂️ gana a 🧻")
+            }
+            else if(pc==3 && seleccion==1){
+            alert("GANASTE! 🪨 gana a ✂️")
+            }
+            else{
+            alert("PERDISTE")
+            }
+        }
 	</script>
 </head>
 <body>
